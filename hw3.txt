@@ -1,0 +1,35 @@
+概念：
+
+使用pthread creatr 創建thread，以及利用join加入thread。
+利用gettid將自己本身的tid儲存至struct裡頭，以便main thread可以取得。
+
+
+Main：
+
+使用time取得使用cpu的時間，pi實質上沒有使用到，但因為time可以取得的時間不適用在小程式中，故增添取得pi的方程式增加秒數。
+
+利用start開始計時，利用end紀錄結束時間，再利用difftime將兩者時間相減，最後將結果印出。
+
+利用struct儲存在main function裡頭輸入的資料(如輸入的fibonacii數字或第幾個輸入的)。
+
+利用struct取得所創建thread的tid。
+
+
+Fibonacci_number：
+
+如同main functionu一樣使用time來取得使用cpu的時間，只不過最後鄉檢的方式不同，但結果是一樣的。一樣有使用計算pi來增加時間。
+
+利用for迴圈的方式取代遞迴，在main function時，便會輸入要取得第幾位fibonacci數列，而此數值有先利用struct將其儲存起來，故便可將此資料當作for迴圈的設定值，利用
+n1=n2
+n2=n3
+n3=n1
+此種概念來設計取代遞迴的迴圈。
+
+將sum(fibonacci數列的值)設為long long int是因為在測試第50個時，會發現數值變為負數，則得知若設為int會超出範圍，故將其中會使用到的值(涵蓋for迴圈內的值)皆設為long long int，以避免overflow。
+
+利用while迴圈計算出sum為幾位數字，並將其印出來。
+
+
+pi：
+
+計算出pi，對此程式除了增加時間用，無特別用途。
